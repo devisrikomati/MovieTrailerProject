@@ -6,7 +6,7 @@ main_head = '''
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <style>
         .modal {
             display: none;
@@ -90,9 +90,9 @@ main_head = '''
             width: 100%;
             cursor: pointer;
         }
-       
+
     </style>
-     
+
     <title>movies</title>
     <div id="myModal" class="modal">
          <div class="modal-content">
@@ -128,24 +128,34 @@ main_head = '''
 main_content = '''
 <body>
     <h1>movie trailer</h1>
-    
+
     <div class="img1" onclick="onc('B3W4mQTyN2E')">
-        <img  src="https://i2.wp.com/southreel.com/wp-content/uploads/2017/11/chalo-movie-new-lookChalo-Movie-teaserNaga-Shourya-New-Movie-Title-ChaloNaga-Shourya-New-MovieIRA-CreationsNaga-ShouryaRashmika-MandannaTelugu-New-Movieslatest-telugu-movies.jpg?fit=800%2C445"
+        <img  src="https://i2.wp.com/southreel.com/wp-content/uploads/2017/11/"
+        "chalo-movie-new-lookChalo-Movie-teaserNaga-Shourya-New-Movie-Title-"
+        "ChaloNaga-Shourya-New-MovieIRA-CreationsNaga-ShouryaRashmika-Mandanna"
+        "Telugu-New-Movieslatest-telugu-movies.jpg?fit=800%2C445"
             alt="chalo">
-        <p style="text-align: center; color: bisque;  font-size: 25px">challo</p>
-    
+        <p style="text-align: center; color: bisque;  font-size: 25px">
+        challo</p>
+
     </div>
     <div class="img2" onclick="onc('N63I3-RiiS8')">
-        <img src="https://i.ytimg.com/vi/Hwgyw2L_VH4/maxresdefault.jpg" alt="gokula krishnudu">
-        <p style="text-align: center; color: bisque; font-size: 25px">gokula krishudu</p>
+    <img src="https://i.ytimg.com/vi/Hwgyw2L_VH4/maxresdefault.jpg"
+        alt="gokula krishnudu">
+       <p style="text-align: center; color: bisque; font-size: 25px">
+       gokula krishudu</p>
     </div>
     <div class="img3" onclick="onc('Ia6EXfqKiV4')">
-        <img src="http://andhraboxoffice.com/uploads/films/DDsoihFU0AENxiR-jul6.jpg" alt="Ninnu kori">
-        <p style="text-align: center; color: bisque; font-size: 25px">Ninnu kori</p>
+        <img src="http://andhraboxoffice.com/uploads/films/DDsoihFU0AENxiR-"
+        "jul6.jpg" alt="Ninnu kori">
+        <p style="text-align: center; color: bisque; font-size: 25px">
+        Ninnu kori</p>
     </div>
     <div class="img4" onclick="onc('z678PtuCIHo')">
-        <img src="https://igmedia.blob.core.windows.net/igmedia/telugu/news/unnadiokkatejindagi050817_1.jpg" alt="unnadhi okate gindhagi">
-        <p style="text-align: center; color: bisque;  font-size: 25px">vunnadhi okate gindhagi</p>
+        <img src="https://igmedia.blob.core.windows.net/igmedia/telugu/news/"
+        "unnadiokkatejindagi050817_1.jpg" alt="unnadhi okate gindhagi">
+        <p style="text-align: center; color: bisque;  font-size: 25px">"
+        "vunnadhi okate gindhagi</p>
     </div>
     <div id="myMoadal" class="modal">
         <div class="modal-content">
@@ -155,7 +165,10 @@ main_content = '''
         <div id="myModal" class="modal">
            <div class="modal-content">
             <span class="close">&times;</span>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="560" height="315"
+            src="https://www.youtube.com/embed"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
         </div>
     </div>
 
@@ -169,30 +182,34 @@ id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <h2 style="color:white;">{movie_title}</h2>
 </div>
 '''
-def  create_movie(movies):
+
+
+def create_movie(movies):
     content = ''
     for i in movies:
         youtube_id_match = re.search(
-            r'(?<=v=)[^&#]+',i.trailer_youtube_url)
+            r'(?<=v=)[^&#]+', i.trailer_youtube_url)
         youtube_id_match = youtube_id_match or re.search(
-            r'(?<=be/)[^&#]+',i.trailer_youtube_url)
+            r'(?<=be/)[^&#]+', i.trailer_youtube_url)
         trailer_youtube_url = (youtube_id_match.group(0) if youtube_id_match
-                              else None)
-        
+                               else None)
+
         content += movie_title_content.format(
-            movie_title = i.title,
-            poster_image_url = i.poster_image_url,
-            trailer_youtube_id = trailer_youtube_url
+                   movie_title=i.title,
+                   poster_image_url=i.poster_image_url,
+                   trailer_youtube_id=trailer_youtube_url
         )
     return content
 
+
 def open_page(movies):
-    output_file = open('fresh_tomatoes.html','w')
+    output_file = open('fresh_tomatoes.html', 'w')
     rendered_content = main_content.format(
-        movie_tiles = create_movie(movies))
+        movie_tiles=create_movie(movies))
     output_file.write(main_head + rendered_content)
     output_file.close()
 
-    url =os.path.abspath(output_file.name)
+    url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
+
 
