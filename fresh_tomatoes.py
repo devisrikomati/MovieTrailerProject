@@ -130,10 +130,7 @@ main_content = '''
     <h1>movie trailer</h1>
 
     <div class="img1" onclick="onc('B3W4mQTyN2E')">
-        <img  src="https://i2.wp.com/southreel.com/wp-content/uploads/2017/11/"
-        "chalo-movie-new-lookChalo-Movie-teaserNaga-Shourya-New-Movie-Title-"
-        "ChaloNaga-Shourya-New-MovieIRA-CreationsNaga-ShouryaRashmika-Mandanna"
-        "Telugu-New-Movieslatest-telugu-movies.jpg?fit=800%2C445"
+        <img  src="https://bit.ly/2J07Vfe"
             alt="chalo">
         <p style="text-align: center; color: bisque;  font-size: 25px">
         challo</p>
@@ -146,14 +143,12 @@ main_content = '''
        gokula krishudu</p>
     </div>
     <div class="img3" onclick="onc('Ia6EXfqKiV4')">
-        <img src="http://andhraboxoffice.com/uploads/films/DDsoihFU0AENxiR-"
-        "jul6.jpg" alt="Ninnu kori">
+        <img src="https://bit.ly/2IE4FqI" alt="Ninnu kori">
         <p style="text-align: center; color: bisque; font-size: 25px">
         Ninnu kori</p>
     </div>
     <div class="img4" onclick="onc('z678PtuCIHo')">
-        <img src="https://igmedia.blob.core.windows.net/igmedia/telugu/news/"
-        "unnadiokkatejindagi050817_1.jpg" alt="unnadhi okate gindhagi">
+        <img src="https://bit.ly/2rZT1Mo" alt="unnadhi okate gindhagi">
         <p style="text-align: center; color: bisque;  font-size: 25px">"
         "vunnadhi okate gindhagi</p>
     </div>
