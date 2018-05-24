@@ -16,5 +16,3 @@ jindhagi = media.Movie("Vunnadi Okkate Jindagi",
                        "https://www.youtube.com/embed/z678PtuCIHo")
 movies = [chalo, gokula, ninnu, jindhagi]
 fresh_tomatoes.open_page(movies)
-
-
