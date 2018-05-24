@@ -14,5 +14,5 @@ class Movie():
 '''This function for open browser and play trailer'''
 
 
-def show_trailer(j):
-        webbrowswer.open(j.trailer_youtube_url)
+def show_trailer(self):
+        webbrowswer.open(self.trailer_youtube_url)
